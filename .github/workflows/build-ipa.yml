@@ -1,0 +1,47 @@
+name: Build unsigned IPA
+
+# Builds the RichStalk iOS app with NO code signing and packages an unsigned .ipa.
+# SideStore re-signs it on your own phone with your Apple ID.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build app (unsigned)
+        run: |
+          xcodebuild \
+            -project RichStalk.xcodeproj \
+            -scheme RichStalk \
+            -configuration Release \
+            -derivedDataPath build \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGN_IDENTITY="" \
+            DEVELOPMENT_TEAM="" \
+            build
+
+      - name: Package unsigned IPA
+        run: |
+          APP_PATH="build/Build/Products/Release-iphoneos/RichStalk.app"
+          test -d "$APP_PATH" || { echo "RichStalk.app not found"; exit 1; }
+          rm -rf Payload RichStalk-unsigned.ipa
+          mkdir Payload
+          cp -R "$APP_PATH" Payload/
+          zip -r -y RichStalk-unsigned.ipa Payload
+          unzip -l RichStalk-unsigned.ipa | head -20
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RichStalk-unsigned-ipa
+          path: RichStalk-unsigned.ipa
+          if-no-files-found: error
