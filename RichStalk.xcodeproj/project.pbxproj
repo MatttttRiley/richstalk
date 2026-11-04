@@ -1,0 +1,239 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		300000000000000000000101 /* RichStalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000001 /* RichStalkApp.swift */; };
+		300000000000000000000102 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000002 /* Models.swift */; };
+		300000000000000000000103 /* OpenSkyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000003 /* OpenSkyService.swift */; };
+		300000000000000000000104 /* TrackingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000004 /* TrackingStore.swift */; };
+		300000000000000000000105 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000005 /* ContentView.swift */; };
+		300000000000000000000106 /* BillionaireListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000006 /* BillionaireListView.swift */; };
+		300000000000000000000107 /* BillionaireDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000007 /* BillionaireDetailView.swift */; };
+		300000000000000000000108 /* TrackingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000008 /* TrackingMapView.swift */; };
+		300000000000000000000109 /* Billionaires.json in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000009 /* Billionaires.json */; };
+		300000000000000000000110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		100000000000000000000001 /* RichStalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichStalkApp.swift; sourceTree = "<group>"; };
+		100000000000000000000002 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		100000000000000000000003 /* OpenSkyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSkyService.swift; sourceTree = "<group>"; };
+		100000000000000000000004 /* TrackingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingStore.swift; sourceTree = "<group>"; };
+		100000000000000000000005 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		100000000000000000000006 /* BillionaireListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillionaireListView.swift; sourceTree = "<group>"; };
+		100000000000000000000007 /* BillionaireDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillionaireDetailView.swift; sourceTree = "<group>"; };
+		100000000000000000000008 /* TrackingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingMapView.swift; sourceTree = "<group>"; };
+		100000000000000000000009 /* Billionaires.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Billionaires.json; sourceTree = "<group>"; };
+		100000000000000000000010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		100000000000000000000011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		100000000000000000000012 /* RichStalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichStalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		300000000000000000000203 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		200000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				200000000000000000000002 /* RichStalk */,
+				200000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		200000000000000000000002 /* RichStalk */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000001 /* RichStalkApp.swift */,
+				100000000000000000000002 /* Models.swift */,
+				100000000000000000000003 /* OpenSkyService.swift */,
+				100000000000000000000004 /* TrackingStore.swift */,
+				100000000000000000000005 /* ContentView.swift */,
+				100000000000000000000006 /* BillionaireListView.swift */,
+				100000000000000000000007 /* BillionaireDetailView.swift */,
+				100000000000000000000008 /* TrackingMapView.swift */,
+				100000000000000000000009 /* Billionaires.json */,
+				100000000000000000000010 /* Assets.xcassets */,
+				100000000000000000000011 /* Info.plist */,
+			);
+			path = RichStalk;
+			sourceTree = "<group>";
+		};
+		200000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000012 /* RichStalk.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		400000000000000000000001 /* RichStalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 700000000000000000000002 /* Build configuration list for PBXNativeTarget "RichStalk" */;
+			buildPhases = (
+				300000000000000000000201 /* Sources */,
+				300000000000000000000202 /* Resources */,
+				300000000000000000000203 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RichStalk;
+			productName = RichStalk;
+			productReference = 100000000000000000000012 /* RichStalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		500000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					400000000000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 700000000000000000000001 /* Build configuration list for PBXProject "RichStalk" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 200000000000000000000001;
+			productRefGroup = 200000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				400000000000000000000001 /* RichStalk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		300000000000000000000202 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				300000000000000000000109 /* Billionaires.json in Resources */,
+				300000000000000000000110 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		300000000000000000000201 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				300000000000000000000101 /* RichStalkApp.swift in Sources */,
+				300000000000000000000102 /* Models.swift in Sources */,
+				300000000000000000000103 /* OpenSkyService.swift in Sources */,
+				300000000000000000000104 /* TrackingStore.swift in Sources */,
+				300000000000000000000105 /* ContentView.swift in Sources */,
+				300000000000000000000106 /* BillionaireListView.swift in Sources */,
+				300000000000000000000107 /* BillionaireDetailView.swift in Sources */,
+				300000000000000000000108 /* TrackingMapView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		600000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		600000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		600000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RichStalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philbert.richstalk;
+				PRODUCT_NAME = RichStalk;
+				SWIFT_EMBED_LIBRARIES_WITH_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		600000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RichStalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philbert.richstalk;
+				PRODUCT_NAME = RichStalk;
+				SWIFT_EMBED_LIBRARIES_WITH_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		700000000000000000000001 /* Build configuration list for PBXProject "RichStalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				600000000000000000000001 /* Debug */,
+				600000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		700000000000000000000002 /* Build configuration list for PBXNativeTarget "RichStalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				600000000000000000000003 /* Debug */,
+				600000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 500000000000000000000001 /* Project object */;
+}
