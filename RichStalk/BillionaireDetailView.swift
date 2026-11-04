@@ -32,11 +32,19 @@ struct BillionaireDetailView: View {
                         AircraftRow(person: person, jet: jet)
                     }
                 } else {
-                    ContentUnavailableView(
-                        "No publicly tracked jet",
-                        systemImage: "airplane.slash",
-                        description: Text("No aircraft registration has been publicly documented for this person, or their flights are chartered or privacy-blocked. That does not mean they never fly privately — it means there is nothing honest to put on the map.")
-                    )
+                    VStack(spacing: 8) {
+                        Image(systemName: "airplane.slash")
+                            .font(.largeTitle)
+                            .foregroundStyle(.secondary)
+                        Text("No publicly tracked jet")
+                            .font(.headline)
+                        Text("No aircraft registration has been publicly documented for this person, or their flights are chartered or privacy-blocked. That does not mean they never fly privately — it means there is nothing honest to put on the map.")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding()
                 }
             }
 

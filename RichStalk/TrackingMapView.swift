@@ -58,11 +58,19 @@ struct TrackingMapView: View {
                             .foregroundStyle(.secondary)
                     }
                     if liveAircraft.isEmpty {
-                        ContentUnavailableView(
-                            "No jets airborne right now",
-                            systemImage: "airplane.slash",
-                            description: Text("None of the documented jets are broadcasting a live position at the moment. They may be on the ground, outside receiver coverage, or privacy-blocked. Pull to refresh or tap Refresh to check again.")
-                        )
+                        VStack(spacing: 8) {
+                            Image(systemName: "airplane.slash")
+                                .font(.largeTitle)
+                                .foregroundStyle(.secondary)
+                            Text("No jets airborne right now")
+                                .font(.headline)
+                            Text("None of the documented jets are broadcasting a live position at the moment. They may be on the ground, outside receiver coverage, or privacy-blocked. Pull to refresh or tap Refresh to check again.")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
                     } else {
                         ForEach(liveAircraft, id: \.aircraft.registration) { item in
                             VStack(alignment: .leading, spacing: 2) {
