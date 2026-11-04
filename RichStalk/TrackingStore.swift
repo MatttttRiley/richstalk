@@ -16,12 +16,21 @@ final class TrackingStore: ObservableObject {
     /// Recent-flight info (origin/destination) keyed by lowercase ICAO24.
     @Published private(set) var recentFlights: [String: RecentFlight] = [:]
 
+    /// Trail history for this map session only, keyed by lowercase ICAO24.
+    /// Each point is a position actually received from OpenSky — never
+    /// interpolated, predicted, or carried over from a previous session.
+    /// Capped at 24 points per aircraft; only airborne positions are kept.
+    @Published private(set) var trails: [String: [(latitude: Double, longitude: Double)]] = [:]
+
     private var refreshTask: Task<Void, Never>?
 
     var trackedAircraft: [(owner: Billionaire, aircraft: Aircraft)] = []
 
     func startTracking(aircraft: [(owner: Billionaire, aircraft: Aircraft)]) {
         trackedAircraft = aircraft
+        // Fresh session, fresh trails: yesterday's positions are not a
+        // route for today's flight.
+        trails = [:]
         stopTracking()
         refreshTask = Task {
             while !Task.isCancelled {
@@ -46,6 +55,25 @@ final class TrackingStore: ObservableObject {
             var next: [String: OpenSkyState] = [:]
             for state in fetched { next[state.icao24] = state }
             states = next
+            // Record trail points only from positions actually received
+            // in this refresh, and only for airborne aircraft. A repeated
+            // sample at (nearly) the same spot adds no point, so a parked
+            // or slow sample does not inflate the trail.
+            for state in fetched where state.hasPosition && !state.onGround {
+                guard let latitude = state.latitude,
+                      let longitude = state.longitude else { continue }
+                var trail = trails[state.icao24] ?? []
+                let last = trail.last
+                if last == nil
+                    || abs(last!.latitude - latitude) > 0.0005
+                    || abs(last!.longitude - longitude) > 0.0005 {
+                    trail.append((latitude: latitude, longitude: longitude))
+                    if trail.count > 24 {
+                        trail.removeFirst(trail.count - 24)
+                    }
+                    trails[state.icao24] = trail
+                }
+            }
             lastUpdated = Date()
             errorMessage = nil
         } catch let error as OpenSkyError {
